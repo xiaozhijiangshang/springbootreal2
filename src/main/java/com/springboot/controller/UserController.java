@@ -15,6 +15,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+//这是查询
     @RequestMapping("/bbb")
     public  String list(Model model){
     List<User> list= userService.list();
@@ -27,7 +28,7 @@ public class UserController {
 
         return  "adduser";
     }
-
+//添加
     @RequestMapping("/adduser")
     public  String adduser(String name){
         userService.adduser(name);
@@ -37,7 +38,7 @@ public class UserController {
     }
 
 
-    //修改——查询
+    //修改——查询（1）
     @RequestMapping("/updateone")
     public  String updateone(Integer id,Model model){
        User user= userService.updateone(id);
